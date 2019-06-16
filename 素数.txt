@@ -1,0 +1,59 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+
+#include<stdio.h>
+#include<stdlib.h>
+#include<math.h>
+
+//判断素数
+int judge_prime(int n)
+{
+	int i;
+	for (i = 2; i <= sqrt(n); i++)
+	{
+		if (n%i == 0)
+		{
+			return 0;
+		}
+	}	
+	return 1;
+}
+
+//接收一个数判断是否素数
+int main()
+{
+	int s, k;
+	printf("请输入要判断的数字：\n");
+	scanf("%d", &s);
+	k=judge_prime(s);
+	if (k != 0)
+	{
+		printf("%d是素数\n", s);
+	}
+	else
+		printf("%d不是素数\n", s);
+	return 0;
+}
+
+//打印出某区间内的素数 以100-200为例
+int main2()
+{
+	int k;
+	for (int i = 100; i <= 200; i++){
+		k = judge_prime(i);
+		if (k != 0) {
+			printf("%d\t", i);
+		}
+	}
+	system("pause");
+	return 0;
+}   
+
+
+
+
+
+
+
+
+
+
